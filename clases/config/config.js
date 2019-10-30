@@ -1,4 +1,24 @@
 /////////////////////////////////////////////////////
 ////////////////////   PUERTO    ////////////////////
 
-process.env.PORT = process.env.PORT || 3001;
+process.env.PORT = process.env.PORT || 3000;
+
+
+/////////////////////////////////////////////////////
+////////////////////   ENTORNO    ////////////////////
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
+
+/////////////////////////////////////////////////////
+////////////////////   Base de datos    ////////////////////
+
+//let urlBD;
+
+if (process.env.NODE_ENV === 'dev') {
+
+    process.env.URLDB = 'mongodb://localhost:27017/fotosgram';
+} else {
+    process.env.URLDB = 'mongodb+srv://miru:aLH7BvEkHd2aoGVX@fotosgram-rityu.mongodb.net/fotosgram';
+}
+
+//process.env.URLDB = urlBD;
